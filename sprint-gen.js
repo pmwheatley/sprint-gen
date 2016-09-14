@@ -85,11 +85,11 @@ var go = function(sprint, number, slack) {
 };
 
 program
-	.arguments('<sprint>')
-	.option('-n, --number <n>', 'An integer argument', parseInt)
-	.option('-s, --slack', 'Output formatted for Slack Simple Poll')
-	.action(function(sprint) {
-		go(parseInt(sprint), program.number, program.slack);
+	.arguments('<sprint_number>')
+	.option('-n, --number <n>', 'number of names to generate', parseInt)
+	.option('-s, --slack', 'format output for use with Slack Simple Poll')
+	.action(function(sprint_number) {
+		go(parseInt(sprint_number), program.number, program.slack);
 	})
 	.parse(process.argv);
 
